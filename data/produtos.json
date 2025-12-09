@@ -1,0 +1,91 @@
+[
+  {
+    "slug": "resina-epoxi-industrial",
+    "nome": "Resina Epóxi Industrial",
+    "descricao": "Alto desempenho para laminação e reparos estruturais. Ideal para aplicações que exigem resistência química e mecânica superior.",
+    "descricaoLonga": "Nossa resina epóxi industrial oferece excelente adesão, resistência química e mecânica, sendo ideal para laminação estrutural, reparos em equipamentos industriais e aplicações que exigem alta performance.",
+    "imagem": "assets/produtos/resina-epoxi.svg",
+    "categorias": ["resinas", "laminacao"],
+    "aplicacoes": ["Indústria", "Construção Civil", "Automotivo", "Naval"],
+    "especificacoes": [
+      "Tempo de cura: 24-48 horas",
+      "Viscosidade: Média",
+      "Resistência à temperatura: até 80°C",
+      "Embalagem: Galões de 1L, 5L e 20L"
+    ]
+  },
+  {
+    "slug": "fibra-de-vidro-tecido",
+    "nome": "Fibra de Vidro em Tecido",
+    "descricao": "Força e versatilidade para compósitos de grande porte. Disponível em diversos gramaturas e padrões de tecelagem.",
+    "descricaoLonga": "Tecido de fibra de vidro de alta qualidade, disponível em diferentes gramaturas e padrões de tecelagem. Perfeito para reforço estrutural em compósitos, reparos e fabricação de peças de grande porte.",
+    "imagem": "assets/produtos/tecido-fv.svg",
+    "categorias": ["fibras", "compostos"],
+    "aplicacoes": ["Indústria", "Construção Civil", "Naval", "Automotivo"],
+    "especificacoes": [
+      "Gramaturas: 200g/m², 300g/m², 450g/m²",
+      "Padrões: Plain, Twill, Satin",
+      "Largura: 1m e 1,27m",
+      "Embalagem: Rolos de 50m"
+    ]
+  },
+  {
+    "slug": "gelcoat-nautico",
+    "nome": "Gelcoat Náutico",
+    "descricao": "Acabamento premium com alta resistência e brilho. Formulado especialmente para aplicações náuticas e exteriores.",
+    "descricaoLonga": "Gelcoat náutico de alta qualidade, desenvolvido para proporcionar acabamento superior com excelente brilho e resistência aos raios UV, água salgada e intempéries. Ideal para cascos, decks e peças náuticas.",
+    "imagem": "assets/produtos/gelcoat.svg",
+    "categorias": ["acabamento", "nautico"],
+    "aplicacoes": ["Naval", "Indústria", "Construção Civil"],
+    "especificacoes": [
+      "Resistência UV: Alta",
+      "Brilho: 85-90 gloss units",
+      "Cores disponíveis: Branco, Azul, Vermelho e sob medida",
+      "Embalagem: Galões de 1L, 5L e 20L"
+    ]
+  },
+  {
+    "slug": "resina-poliéster-ortoftalica",
+    "nome": "Resina Poliéster Ortoftálica",
+    "descricao": "Versátil e econômica, ideal para laminação geral e fabricação de peças em série.",
+    "descricaoLonga": "Resina poliéster ortoftálica de uso geral, perfeita para laminação manual, fabricação de tanques, peças decorativas e aplicações que não exigem alta resistência química.",
+    "imagem": "assets/produtos/resina-poliester.svg",
+    "categorias": ["resinas", "laminacao"],
+    "aplicacoes": ["Indústria", "Construção Civil", "Automotivo"],
+    "especificacoes": [
+      "Tempo de gel: 15-25 minutos",
+      "Viscosidade: Baixa a média",
+      "Resistência à temperatura: até 60°C",
+      "Embalagem: Galões de 1L, 5L, 20L e tambores"
+    ]
+  },
+  {
+    "slug": "manta-de-fibra-de-vidro",
+    "nome": "Manta de Fibra de Vidro",
+    "descricao": "Reforço estrutural em formato de manta, fácil aplicação e excelente molhabilidade.",
+    "descricaoLonga": "Manta de fibra de vidro para reforço estrutural, com excelente molhabilidade e fácil aplicação. Ideal para reparos, reforços e fabricação de peças que necessitam de resistência mecânica.",
+    "imagem": "assets/produtos/manta-fv.svg",
+    "categorias": ["fibras", "reforco"],
+    "aplicacoes": ["Indústria", "Construção Civil", "Naval", "Automotivo"],
+    "especificacoes": [
+      "Gramaturas: 300g/m², 450g/m², 600g/m²",
+      "Largura: 1m e 1,27m",
+      "Embalagem: Rolos de 25m e 50m"
+    ]
+  },
+  {
+    "slug": "catalisador-peroxido",
+    "nome": "Catalisador Peróxido",
+    "descricao": "Catalisador de alta qualidade para cura de resinas poliéster e gelcoats.",
+    "descricaoLonga": "Peróxido de metil etil cetona (MEKP) de alta pureza, essencial para a cura de resinas poliéster e gelcoats. Proporciona cura rápida e uniforme.",
+    "imagem": "assets/produtos/catalisador.svg",
+    "categorias": ["acessorios", "catalisadores"],
+    "aplicacoes": ["Indústria", "Construção Civil", "Naval", "Automotivo"],
+    "especificacoes": [
+      "Dosagem: 1-3% em peso",
+      "Tempo de gel: Ajustável conforme dosagem",
+      "Embalagem: Frascos de 1L e 5L"
+    ]
+  }
+]
+

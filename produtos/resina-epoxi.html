@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resina Epóxi - Fyber Polímeros. Alta resistência mecânica e química para aplicações profissionais.">
+  <title>Resina Epóxi - Fyber Polímeros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo_fiber-polimeros-menu.svg">
+  <style>
+    .produto-page-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .produto-sidebar {
+      position: sticky;
+      top: 140px;
+      height: fit-content;
+      background-color: var(--branco);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px var(--sombra);
+    }
+
+    .produto-sidebar h2 {
+      font-size: 1.25rem;
+      color: var(--azul-escuro);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .categoria-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .categoria-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .categoria-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--cinza-escuro);
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .categoria-link:hover {
+      background-color: var(--azul-claro);
+      color: var(--azul-escuro);
+    }
+
+    .categoria-link.active {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      font-weight: 600;
+    }
+
+    @media (max-width: 968px) {
+      .produto-page-container {
+        grid-template-columns: 1fr;
+      }
+
+      .produto-sidebar {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mini-banner"><p>Entregamos para todo o Brasil</p></div>
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/logo_fiber-polimeros-menu.svg" alt="Fyber Polímeros" class="logo-img">
+      </a>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../produtos.html">Produtos</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Categorias<span class="chevron">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../produtos.html#fibra-de-vidro">Fibra de Vidro</a></li>
+              <li><a href="../produtos.html#equipamentos-acessorios">Equipamentos e Acessórios</a></li>
+              <li><a href="../produtos.html#resinas">Resinas</a></li>
+              <li><a href="../produtos.html#gel-coats">Gel Coats</a></li>
+              <li><a href="../produtos.html#desmoldantes">Desmoldantes</a></li>
+              <li><a href="../produtos.html#cargas">Cargas</a></li>
+              <li><a href="../produtos.html#material-de-nucleo">Material de Núcleo</a></li>
+              <li><a href="../produtos.html#pigmentos">Pigmentos</a></li>
+              <li><a href="../produtos.html#catalisadores-aceleradores">Catalisadores e Aceleradores</a></li>
+              <li><a href="../produtos.html#silicones">Silicones</a></li>
+              <li><a href="../produtos.html#espumas">Espumas</a></li>
+            </ul>
+          </li>
+          <li><a href="../quem-somos.html">Quem Somos</a></li>
+          <li><a href="../contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="margin-top: 120px;">
+    <div class="produto-page-container">
+      <!-- Sidebar de Categorias -->
+      <aside class="produto-sidebar">
+        <h2>Categorias</h2>
+        <ul class="categoria-list">
+          <li class="categoria-item">
+            <a href="../produtos.html" class="categoria-link">Todas as Categorias</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=fibra-de-vidro" class="categoria-link">Fibra de Vidro</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=equipamentos-acessorios" class="categoria-link">Equipamentos e Acessórios</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=resinas" class="categoria-link active">Resinas</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=gel-coats" class="categoria-link">Gel Coats</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=desmoldantes" class="categoria-link">Desmoldantes</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=cargas" class="categoria-link">Cargas</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=material-de-nucleo" class="categoria-link">Material de Núcleo</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=pigmentos" class="categoria-link">Pigmentos</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=catalisadores-aceleradores" class="categoria-link">Catalisadores e Aceleradores</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=silicones" class="categoria-link">Silicones</a>
+          </li>
+          <li class="categoria-item">
+            <a href="../produtos.html?categoria=espumas" class="categoria-link">Espumas</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Conteúdo do Produto -->
+      <div class="produto-content">
+        <section style="padding: 0 0 2rem 0;">
+          <p style="color: #6B7280; font-size: 0.875rem;">
+            <a href="../index.html" style="color: var(--azul-escuro);">Home</a> > 
+            <a href="../produtos.html?categoria=resinas" style="color: var(--azul-escuro);">Resinas</a> > 
+            <strong>Resina Epóxi</strong>
+          </p>
+        </section>
+
+        <section style="padding: 0;">
+          <div style="max-width: 100%; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+          <div>
+            <img src="../assets/img/produtos/resinas/resina-epoxi/1.webp" alt="Resina Epóxi" style="width: 100%; height: 500px; object-fit: cover; border-radius: 16px; background: linear-gradient(135deg, #0200d2 0%, #0100b8 100%);"
+                 onerror="this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.innerHTML='<div style=\'color: white; font-size: 2rem; font-weight: 700;\'>Resina Epóxi</div>';">
+          </div>
+          <div>
+            <h1 style="color: var(--azul-escuro); margin-bottom: 1.5rem;">Resina Epóxi</h1>
+            
+            <div style="margin-bottom: 2rem; line-height: 1.8;">
+              <p><strong>Resina Epóxi de alto desempenho</strong>, reconhecida mundialmente por suas propriedades mecânicas superiores e excelente resistência química. Este sistema bicomponente (resina + endurecedor) proporciona uma ligação molecular extremamente forte, resultando em compósitos de altíssima qualidade com propriedades estruturais excepcionais.</p>
+              
+              <p>A Resina Epóxi da Fyber Polímeros é <strong>ideal para aplicações que exigem máxima resistência</strong>, como fabricação aeronáutica, automotiva de alta performance, náutica de competição e ferramentaria industrial. Oferece baixíssima retração durante a cura, excelente adesão a diversos substratos, superior resistência à fadiga e notável estabilidade dimensional. Perfeita para laminação a vácuo, infusão e processos avançados de fabricação de compósitos.</p>
+            </div>
+
+            <div style="background-color: var(--cinza-claro); padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+              <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;">Características Principais</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>
+                  Alta resistência mecânica e química
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>
+                  Baixíssima retração
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>
+                  Excelente adesão
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>
+                  Ideal para processos avançados
+                </li>
+              </ul>
+            </div>
+
+            <div style="display: flex; justify-content: center;">
+              <a href="https://wa.me/557191049971?text=Olá,%20quero%20solicitar%20um%20orçamento%20para%20Resina%20Epóxi" 
+                 class="btn btn-primary btn-whatsapp" target="_blank" rel="noopener" style="background-color: #2563eb; width: 100%; justify-content: center;">
+                Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>2026 — Todos os direitos reservados — Fyber Polímeros.</p>
+      <p>Este site tem como objetivo garantir a melhor experiência possível para o usuário.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+

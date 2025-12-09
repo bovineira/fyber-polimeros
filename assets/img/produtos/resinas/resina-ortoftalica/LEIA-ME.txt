@@ -1,0 +1,65 @@
+📸 PASTA DE IMAGENS DO PRODUTO: Tecido Peel Ply
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COMO ADICIONAR IMAGENS:
+
+1. Coloque suas imagens NESTA PASTA
+
+2. Nomeie as imagens como:
+   • 1.jpg  ← Imagem principal (obrigatória)
+   • 2.jpg  ← Segunda imagem (opcional)
+   • 3.jpg  ← Terceira imagem (opcional)
+   • 4.jpg, 5.jpg, etc...
+
+   OU use nomes descritivos:
+   • frente.jpg
+   • lado.jpg
+   • detalhe.jpg
+   • aplicacao.jpg
+
+3. Formatos aceitos:
+   ✓ .jpg / .jpeg
+   ✓ .png
+   ✓ .webp
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EXEMPLO DE ESTRUTURA:
+
+tecido-peel-ply/
+├── 1.jpg       ← Imagem principal do produto
+├── 2.jpg       ← Detalhe da textura
+├── 3.jpg       ← Produto aplicado
+├── 4.jpg       ← Embalagem
+└── LEIA-ME.txt ← Este arquivo (pode deletar)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FUNCIONAMENTO AUTOMÁTICO:
+
+✓ A primeira imagem aparece como imagem principal
+✓ As demais aparecem como miniaturas clicáveis
+✓ Clique para ampliar em tela cheia
+✓ Navegue com as setas ← →
+✓ Feche com ESC ou clicando fora
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DICAS:
+
+• Use imagens de boa qualidade (mínimo 1200px de largura)
+• Mantenha iluminação adequada
+• Fundo limpo destaca melhor o produto
+• Mostre diferentes ângulos e aplicações
+• Comprima as imagens antes (máx 500KB cada)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IMPORTANTE:
+
+Se NÃO houver imagens nesta pasta, a página mostrará um
+placeholder com gradiente azul e o nome do produto.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

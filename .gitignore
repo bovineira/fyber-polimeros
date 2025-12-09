@@ -1,0 +1,35 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Temporários
+*.tmp
+*.bak
+*~
+
+# Cache do Cursor
+.cursor/
+
+# Documentação temporária
+TESTE_FUNCIONALIDADE.md
+CORRECOES_APLICADAS.md
+

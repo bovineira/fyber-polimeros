@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catalisador BPO - Fyber Polímeros. <strong>Peróxido de Benzoíla (BPO)</strong> em pasta, catalisador de baixa reatividade indicado para">
+  <title>Catalisador BPO - Fyber Polímeros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=2.0">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo_fiber-polimeros-menu.svg">
+  <style>
+    /* Animação de entrada da página */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    /* Estilos para galeria de imagens do produto */
+    .produto-galeria {
+      position: relative;
+      width: 100%;
+    }
+    
+    .produto-imagem-principal {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0200d2 0%, #0100b8 100%);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    
+    .produto-imagem-principal:hover {
+      transform: scale(1.02);
+    }
+    
+    .produto-miniaturas {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    
+    .produto-miniatura {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .produto-miniatura:hover {
+      border-color: var(--azul-escuro);
+      transform: scale(1.05);
+    }
+    
+    .produto-miniatura.ativa {
+      border-color: var(--azul-escuro);
+    }
+    
+    /* Modal para visualização em tela cheia */
+    .modal-galeria {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-galeria.ativo {
+      display: flex;
+    }
+    
+    .modal-conteudo {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .modal-imagem {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    .modal-fechar {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+    }
+    
+    .modal-navegacao {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+    
+    .modal-navegacao:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+    
+    .modal-anterior {
+      left: -60px;
+    }
+    
+    .modal-proximo {
+      right: -60px;
+    }
+    
+    @media (max-width: 768px) {
+      .produto-imagem-principal {
+        height: 300px;
+      }
+      
+      .produto-miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 0.5rem;
+      }
+      
+      .produto-miniatura {
+        height: 60px;
+      }
+      
+      .modal-navegacao {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+      
+      .modal-anterior {
+        left: 10px;
+      }
+      
+      .modal-proximo {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mini-banner"><p>Entregamos para todo o Brasil</p></div>
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo"><img src="../assets/logo_fiber-polimeros-menu.svg" alt="Fyber Polímeros" class="logo-img"></a>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../produtos.html">Produtos</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Categorias<span class="chevron">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../produtos.html#fibra-de-vidro">Fibra de Vidro</a></li>
+              <li><a href="../produtos.html#equipamentos-acessorios">Equipamentos e Acessórios</a></li>
+              <li><a href="../produtos.html#resinas">Resinas</a></li>
+              <li><a href="../produtos.html#gel-coats">Gel Coats</a></li>
+              <li><a href="../produtos.html#desmoldantes">Desmoldantes</a></li>
+              <li><a href="../produtos.html#cargas">Cargas</a></li>
+              <li><a href="../produtos.html#material-de-nucleo">Material de Núcleo</a></li>
+              <li><a href="../produtos.html#pigmentos">Pigmentos</a></li>
+              <li><a href="../produtos.html#catalisadores-aceleradores">Catalisadores e Aceleradores</a></li>
+              <li><a href="../produtos.html#silicones">Silicones</a></li>
+              <li><a href="../produtos.html#espumas">Espumas</a></li>
+            </ul>
+          </li>
+          <li><a href="../quem-somos.html">Quem Somos</a></li>
+          <li><a href="../contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Loader -->
+  <div id="pageLoader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 99999; display: flex; align-items: center; justify-content: center;">
+    <div style="text-align: center;">
+      <div style="width: 60px; height: 60px; border: 6px solid #f3f3f3; border-top: 6px solid #0200d2; border-radius: 50%; animation: spinLoader 0.8s linear infinite; margin: 0 auto 1.5rem; box-shadow: 0 4px 12px rgba(2,0,210,0.2);"></div>
+      <p style="color: #0200d2; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px;">Carregando...</p>
+    </div>
+  </div>
+  <style>
+    @keyframes spinLoader {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    body.loading {
+      overflow: hidden;
+    }
+  </style>
+  
+  <main style="margin-top: 120px; padding-top: 140px; min-height: 100vh;">>
+    <div class="animate-in">
+      <section style="padding: 2rem 2rem 0; max-width: 1400px; margin: 0 auto;">
+        <p style="color: #6B7280; font-size: 0.875rem;">
+          <a href="../index.html" style="color: var(--azul-escuro);">Home</a> > 
+          <a href="../produtos.html#demoldantes" style="color: var(--azul-escuro);">Desmoldantes</a> > 
+          <strong>Catalisador BPO</strong>
+        </p>
+      </section>
+      <section style="padding: 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <div class="produto-galeria">
+            <img id="imagemPrincipal" 
+                 src="../assets/img/produtos/demoldantes/Catalizador BPO/1.webp" 
+                 alt="Catalisador BPO" 
+                 class="produto-imagem-principal"
+                 onclick="abrirModal(0)"
+                 onerror="carregarImagemPadrao(this, 'Catalisador BPO')">
+            <div id="miniaturas" class="produto-miniaturas"></div>
+          </div>
+          <div>
+            <h1 style="color: var(--azul-escuro); margin-bottom: 1.5rem;">Catalisador BPO</h1>
+            <div style="margin-bottom: 2rem; line-height: 1.8;">
+              <p><strong>Peróxido de Benzoíla (BPO)</strong> em pasta, catalisador de baixa reatividade indicado para cura de resinas em temperatura elevada ou sistemas que exigem tempo de trabalho prolongado. Alternativa ao MEK para aplicações específicas.</p>
+              <p>O BPO é <strong>especialmente indicado para processos em altas temperaturas</strong>, cura em estufa e fabricação de peças por moldagem térmica. Oferece tempo de gel mais longo em temperatura ambiente, permitindo trabalho com grandes volumes de resina. Amplamente utilizado em indústria de botões, peças usinadas e componentes que serão curados em ciclo térmico controlado. Pasta facilita dosagem precisa e homogeneização. Armazenar em local fresco e seco, longe de fontes de calor.</p>
+            </div>
+            <div style="background-color: var(--cinza-claro); padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+              <h3 style="color: var(--azul-escuro); margin-bottom: 1rem;">Características Principais</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>Para cura térmica</li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>Tempo de trabalho prolongado</li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>Fácil dosagem</li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--azul-escuro); font-weight: bold;">✓</span>Estável em temperatura ambiente</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Catalisador%20BPO" 
+               class="btn btn-primary btn-whatsapp" style="background-color: #2563eb;" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="width: 100%; justify-content: center; background-color: #2563eb; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600;">
+              Fazer orçamento
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+  
+  <!-- Modal para visualização em tela cheia -->
+  <div id="modalGaleria" class="modal-galeria" onclick="fecharModal(event)">
+    <div class="modal-conteudo">
+      <button class="modal-fechar" onclick="fecharModal(event)">×</button>
+      <button class="modal-navegacao modal-anterior" onclick="navegarModal(-1, event)">‹</button>
+      <img id="modalImagem" class="modal-imagem" src="" alt="">
+      <button class="modal-navegacao modal-proximo" onclick="navegarModal(1, event)">›</button>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <p>2026 — Todos os direitos reservados — Fyber Polímeros.</p>
+      <p>Este site tem como objetivo garantir a melhor experiência possível para o usuário.</p>
+    </div>
+  </footer>
+  
+  <script src="../script.js"></script>
+  <script>
+    // Sistema de galeria de imagens do produto
+    const imagensDisponiveis = [];
+    let indiceAtual = 0;
+    const caminhoBase = '../assets/img/produtos/demoldantes/Catalizador BPO/';
+    
+    // Função para carregar imagem padrão se não houver imagens
+    function carregarImagemPadrao(img, nomeProduto) {
+      img.style.display = 'flex';
+      img.style.alignItems = 'center';
+      img.style.justifyContent = 'center';
+      img.innerHTML = '<div style="color: white; font-size: 2rem; font-weight: 700; text-align: center;">' + nomeProduto + '</div>';
+      img.onclick = null;
+    }
+    
+    // Tentar carregar múltiplas imagens
+    function carregarImagens() {
+      const extensoes = ['jpg', 'jpeg', 'png', 'webp'];
+      const maxImagens = 10; // Tentar até 10 imagens
+      let promises = [];
+      
+      for (let i = 1; i <= maxImagens; i++) {
+        for (let ext of extensoes) {
+          promises.push(
+            verificarImagem(caminhoBase + i + '.' + ext)
+              .then(url => {
+                if (url && !imagensDisponiveis.includes(url)) {
+                  imagensDisponiveis.push(url);
+                }
+              })
+              .catch(() => {})
+          );
+        }
+      }
+      
+      Promise.all(promises).then(() => {
+        if (imagensDisponiveis.length > 0) {
+          // Ordenar imagens
+          imagensDisponiveis.sort();
+          
+          // Definir primeira imagem
+          document.getElementById('imagemPrincipal').src = imagensDisponiveis[0];
+          document.getElementById('imagemPrincipal').onerror = null;
+          
+          // Criar miniaturas se houver mais de uma imagem
+          if (imagensDisponiveis.length > 1) {
+            criarMiniaturas();
+          }
+        }
+      });
+    }
+    
+    // Verificar se uma imagem existe
+    function verificarImagem(url) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(url);
+        img.onerror = reject;
+        img.src = url;
+      });
+    }
+    
+    // Criar miniaturas
+    function criarMiniaturas() {
+      const container = document.getElementById('miniaturas');
+      container.innerHTML = '';
+      
+      imagensDisponiveis.forEach((url, index) => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = 'Miniatura ' + (index + 1);
+        img.className = 'produto-miniatura' + (index === 0 ? ' ativa' : '');
+        img.onclick = () => trocarImagem(index);
+        container.appendChild(img);
+      });
+    }
+    
+    // Trocar imagem principal
+    function trocarImagem(index) {
+      indiceAtual = index;
+      document.getElementById('imagemPrincipal').src = imagensDisponiveis[index];
+      
+      // Atualizar classe ativa nas miniaturas
+      const miniaturas = document.querySelectorAll('.produto-miniatura');
+      miniaturas.forEach((mini, i) => {
+        mini.classList.toggle('ativa', i === index);
+      });
+    }
+    
+    // Abrir modal
+    function abrirModal(index) {
+      if (imagensDisponiveis.length === 0) return;
+      
+      indiceAtual = index;
+      document.getElementById('modalImagem').src = imagensDisponiveis[index];
+      document.getElementById('modalGaleria').classList.add('ativo');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Fechar modal
+    function fecharModal(event) {
+      if (event.target.id === 'modalGaleria' || event.target.classList.contains('modal-fechar')) {
+        event.stopPropagation();
+        document.getElementById('modalGaleria').classList.remove('ativo');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Navegar no modal
+    function navegarModal(direcao, event) {
+      event.stopPropagation();
+      indiceAtual = (indiceAtual + direcao + imagensDisponiveis.length) % imagensDisponiveis.length;
+      document.getElementById('modalImagem').src = imagensDisponiveis[indiceAtual];
+      trocarImagem(indiceAtual);
+    }
+    
+    // Teclas de navegação
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('modalGaleria');
+      if (modal.classList.contains('ativo')) {
+        if (e.key === 'Escape') {
+          fecharModal({ target: modal });
+        } else if (e.key === 'ArrowLeft') {
+          navegarModal(-1, { stopPropagation: () => {} });
+        } else if (e.key === 'ArrowRight') {
+          navegarModal(1, { stopPropagation: () => {} });
+        }
+      }
+    });
+    
+    // Adicionar classe loading ao body
+    document.body.classList.add('loading');
+    
+    // Carregar imagens ao carregar a página
+    window.addEventListener('load', carregarImagens);
+    
+    // Esconder loader quando página carregar
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loader = document.getElementById('pageLoader');
+        if (loader) {
+          loader.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          loader.style.opacity = '0';
+          loader.style.transform = 'scale(0.95)';
+          document.body.classList.remove('loading');
+          setTimeout(function() {
+            loader.style.display = 'none';
+          }, 500);
+        }
+      }, 200);
+    });
+  </script>
+</body>
+</html>
