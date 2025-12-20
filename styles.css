@@ -69,15 +69,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
 }
 
 p {
@@ -97,8 +111,18 @@ a {
 
 img {
   max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* ============================================
@@ -295,8 +319,15 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  
   .menu-toggle {
     display: block;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
   }
   
   nav {
@@ -321,6 +352,13 @@ nav a.active {
     gap: 0.5rem;
   }
   
+  nav a {
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -331,9 +369,14 @@ nav a.active {
     border-radius: 8px;
   }
   
+  .dropdown-menu a {
+    min-height: 44px;
+  }
+  
   .dropdown-toggle {
     width: 100%;
     justify-content: space-between;
+    min-height: 44px;
   }
 }
 
@@ -344,6 +387,7 @@ nav a.active {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   font-weight: 700;
@@ -355,6 +399,16 @@ nav a.active {
   text-align: center;
   text-decoration: none;
   letter-spacing: 0.5px;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
 
 .btn-primary {
@@ -410,12 +464,32 @@ main {
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  main {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin-top: 0 !important;
+  }
+  
+  main > section:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
 section {
   width: 100%;
   max-width: 100%;
   padding: 4rem 2rem;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
 }
 
 section.hero-slideshow {
@@ -458,6 +532,13 @@ section.bg-azul-escuro p {
   margin-bottom: 3rem;
   font-weight: 800;
   letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
 }
 
 section.bg-azul-escuro .section-title {
@@ -741,22 +822,57 @@ section.bg-azul-escuro .section-title {
 
 @media (max-width: 768px) {
   .hero-slideshow {
-    height: 70vh;
-    min-height: 500px;
+    height: auto;
+    min-height: calc(100vh - 120px);
+    max-height: none;
+  }
+  
+  .slide {
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+  }
+  
+  .slide-content {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+  
+  .slide-content h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content p {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .slide-content .btn {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.75rem);
+    min-height: 44px;
+    min-width: 120px;
   }
   
   .slide-arrow {
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
+    min-width: 44px;
+    min-height: 44px;
   }
   
   .slide-arrow.prev {
-    left: 1rem;
+    left: 0.5rem;
   }
   
   .slide-arrow.next {
-    right: 1rem;
+    right: 0.5rem;
+  }
+  
+  .slideshow-controls {
+    bottom: 1rem;
   }
 }
 
@@ -766,9 +882,16 @@ section.bg-azul-escuro .section-title {
 
 .beneficios-section {
   background-color: var(--branco);
-  padding: 4rem 0;
+  padding: 2rem 0 4rem 0;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .beneficios-section {
+    padding: 0 0 2rem 0;
+    margin-top: 0;
+  }
 }
 
 .beneficios-container {
@@ -777,6 +900,17 @@ section.bg-azul-escuro .section-title {
   max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+@media (max-width: 768px) {
+  .beneficios-container {
+    padding: 0.5rem 0 1rem 0;
+    min-height: auto;
+  }
 }
 
 .beneficios-carousel {
@@ -786,6 +920,8 @@ section.bg-azul-escuro .section-title {
   width: fit-content;
   position: relative;
   z-index: 1;
+  margin: 0 auto;
+  align-self: center;
 }
 
 .beneficios-carousel:active {
@@ -794,7 +930,7 @@ section.bg-azul-escuro .section-title {
 
 .beneficio-card {
   min-width: 280px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(219, 234, 254, 0.5);
   border-radius: 16px;
@@ -807,6 +943,42 @@ section.bg-azul-escuro .section-title {
   gap: 1rem;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .beneficio-card {
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    min-width: 260px;
+    padding: 1.5rem;
+  }
+  
+  .beneficios-carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+  
+  .beneficios-carousel::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .beneficios-carousel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .beneficios-carousel::-webkit-scrollbar-thumb {
+    background: var(--azul-escuro);
+    border-radius: 2px;
+  }
+  
+  .beneficios-container::before,
+  .beneficios-container::after {
+    display: none;
+  }
 }
 
 .beneficio-card::before {
@@ -877,6 +1049,13 @@ section.bg-azul-escuro .section-title {
   padding: 4rem 2rem;
 }
 
+@media (max-width: 768px) {
+  .mais-vendidos-section,
+  .destaques-section {
+    padding: 3rem 1rem;
+  }
+}
+
 .mais-vendidos-section:not(.bg-azul-escuro) {
   background-color: var(--cinza-claro);
 }
@@ -938,6 +1117,14 @@ section.bg-azul-escuro .section-title {
   height: 250px;
   object-fit: cover;
   background-color: var(--azul-claro);
+  overflow: hidden;
+}
+
+.produto-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .produto-card-content {
@@ -989,6 +1176,8 @@ section.bg-azul-escuro .section-title {
   border: none;
   width: 50px;
   height: 50px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
@@ -996,6 +1185,15 @@ section.bg-azul-escuro .section-title {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .carousel-btn {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .bg-azul-escuro .carousel-btn {
@@ -1023,14 +1221,22 @@ section.bg-azul-escuro .section-title {
 }
 
 @media (max-width: 1024px) {
-  .produto-card {
-    min-width: calc(50% - 1rem);
+  .produtos-wrapper.produtos-grid-view {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .produtos-wrapper.produtos-grid-view {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
   .produto-card {
     min-width: 100%;
+    width: 100%;
   }
 }
 
@@ -1041,6 +1247,12 @@ section.bg-azul-escuro .section-title {
 .confianca-section {
   padding: 6rem 2rem;
   background-color: var(--branco);
+}
+
+@media (max-width: 768px) {
+  .confianca-section {
+    padding: 3rem 1rem;
+  }
 }
 
 .confianca-container {
@@ -1097,6 +1309,12 @@ section.bg-azul-escuro .section-title {
   padding: 4rem 2rem;
 }
 
+@media (max-width: 768px) {
+  .contato-rapido-section {
+    padding: 3rem 1rem;
+  }
+}
+
 .contato-rapido-section:not(.bg-azul-escuro) {
   background-color: var(--cinza-claro);
 }
@@ -1105,6 +1323,14 @@ section.bg-azul-escuro .section-title {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .contato-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
 }
 
 .contato-card {
@@ -1201,6 +1427,14 @@ section.bg-azul-escuro .section-title {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
 .produto-grid-card {
   background-color: var(--branco);
   border-radius: 16px;
@@ -1221,6 +1455,14 @@ section.bg-azul-escuro .section-title {
   height: 250px;
   object-fit: cover;
   background-color: var(--azul-claro);
+  overflow: hidden;
+}
+
+.produto-grid-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .produto-grid-card-content {
@@ -1391,17 +1633,51 @@ section.bg-azul-escuro .section-title {
 }
 
 @media (max-width: 768px) {
+  .produto-detalhes {
+    padding: 0 1rem 3rem;
+  }
+  
+  .produto-hero {
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+  
+  .produto-header {
+    margin-bottom: 2rem;
+  }
+  
+  .produto-overview {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
   .produto-info-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .produto-aplicacoes,
+  .produto-especificacoes {
+    padding: 1.5rem;
   }
   
   .produto-cta {
     flex-direction: column;
+    margin-top: 2rem;
   }
   
   .produto-cta .btn {
     width: 100%;
+    min-width: auto;
+  }
+  
+  .porque-fyber {
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .porque-fyber ul {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1478,6 +1754,16 @@ footer {
   color: var(--branco);
   padding: 3rem 2rem 2rem;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1rem 1.5rem;
+  }
 }
 
 .footer-content {
