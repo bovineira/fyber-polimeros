@@ -1036,10 +1036,7 @@ section.bg-azul-escuro .section-title {
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 20%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
 }
 
-/* Duplicar cards para loop infinito */
-.beneficios-carousel .beneficio-card:nth-child(n+7) {
-  display: none;
-}
+/* Removido: Cards duplicados não devem ser escondidos para loop infinito funcionar */
 
 /* ============================================
    CARROSSEL MAIS VENDIDOS

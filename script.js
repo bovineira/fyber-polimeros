@@ -185,11 +185,17 @@ function initBeneficiosCarousel() {
   const carousel = document.querySelector('.beneficios-carousel');
   if (!carousel) return;
   
-  // Duplicar cards para loop infinito
+  // Verificar se já foi duplicado (evitar duplicação múltipla)
   const cards = carousel.querySelectorAll('.beneficio-card');
-  if (cards.length > 0) {
-    cards.forEach(card => {
+  const originalCount = cards.length;
+  
+  // Se já tem mais que o original, não duplicar novamente
+  if (originalCount <= 6 && cards.length <= 6) {
+    // Duplicar cards para loop infinito perfeito
+    const cardsArray = Array.from(cards);
+    cardsArray.forEach(card => {
       const clone = card.cloneNode(true);
+      clone.setAttribute('data-clone', 'true');
       carousel.appendChild(clone);
     });
   }
