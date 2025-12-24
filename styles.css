@@ -322,7 +322,7 @@ nav a.active {
 
 @media (max-width: 768px) {
   header {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
   }
   
   .menu-toggle {
@@ -341,22 +341,33 @@ nav a.active {
     box-shadow: 0 4px 16px var(--sombra);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
   }
   
   nav.active {
-    max-height: none;
-    height: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+    opacity: 1;
   }
   
   nav ul {
     flex-direction: column;
-    padding: 1rem;
-    gap: 0.5rem;
+    padding: 0.5rem 1rem 1rem 1rem;
+    gap: 0;
+    margin: 0;
+  }
+  
+  nav > ul > li {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  nav > ul > li:last-child {
+    border-bottom: none;
   }
   
   nav a {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0.5rem;
     min-height: 44px;
     display: flex;
     align-items: center;
@@ -365,21 +376,32 @@ nav a.active {
   .dropdown-menu {
     position: static;
     box-shadow: none;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
+    margin: 0.25rem 0 0.5rem 0.5rem;
+    padding: 0.25rem 0;
     min-width: auto;
+    max-width: 100%;
     background-color: var(--cinza-claro);
     border-radius: 8px;
+    border: none;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .dropdown-menu li {
+    margin: 0;
   }
   
   .dropdown-menu a {
-    min-height: 44px;
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
   
   .dropdown-toggle {
     width: 100%;
     justify-content: space-between;
     min-height: 44px;
+    padding: 0.75rem 0.5rem;
   }
 }
 
@@ -472,12 +494,18 @@ main {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
-    margin-top: 0 !important;
   }
-  
-  main > section:first-child {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+}
+
+/* Páginas internas com header fixo */
+.page-main {
+  margin-top: 120px;
+  padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .page-main {
+    margin-top: 100px;
   }
 }
 
@@ -957,33 +985,46 @@ section.bg-azul-escuro .section-title {
 }
 
 @media (max-width: 768px) {
+  .beneficios-section {
+    padding: 1rem 0 2rem 0;
+    overflow: visible;
+  }
+  
+  .beneficios-container {
+    padding: 1rem 0;
+    overflow: visible;
+  }
+  
   .beneficio-card {
     background: rgba(255, 255, 255, 1);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    min-width: 260px;
-    padding: 1.5rem;
+    min-width: 240px;
+    max-width: 280px;
+    padding: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   }
   
   .beneficios-carousel {
+    display: flex;
+    gap: 1rem;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    padding: 0.5rem 1rem;
+    scroll-snap-type: x mandatory;
+    animation: none;
   }
   
   .beneficios-carousel::-webkit-scrollbar {
-    height: 4px;
+    display: none;
   }
   
-  .beneficios-carousel::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .beneficios-carousel::-webkit-scrollbar-thumb {
-    background: var(--azul-escuro);
-    border-radius: 2px;
+  .beneficio-card {
+    scroll-snap-align: center;
   }
   
   .beneficios-container::before,
