@@ -20,6 +20,8 @@
       margin: 0 auto;
       padding: 2rem;
       min-height: calc(100vh - 120px);
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .produtos-sidebar {
@@ -91,8 +93,23 @@
 
     .produtos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0;
+    }
+    
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .produtos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .produtos-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .produto-card {
@@ -165,6 +182,8 @@
     @media (max-width: 968px) {
       .produtos-page-container {
         grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
       }
 
       .produtos-sidebar {
@@ -172,7 +191,8 @@
       }
 
       .produtos-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
+        padding: 0;
       }
     }
   </style>
@@ -829,12 +849,25 @@
       const dropdownLinks = document.querySelectorAll('.dropdown-menu a[data-categoria]');
       dropdownLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const categoria = this.dataset.categoria;
-          filtrarProdutos(categoria);
-          
-          // Scroll suave para o topo
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // Se estiver na página de produtos, usar filtro local
+          if (window.location.pathname.includes('produtos.html')) {
+            e.preventDefault();
+            const categoria = this.dataset.categoria;
+            filtrarProdutos(categoria);
+            
+            // Atualizar URL
+            const url = new URL(window.location);
+            if (categoria === 'todas') {
+              url.searchParams.delete('categoria');
+            } else {
+              url.searchParams.set('categoria', categoria);
+            }
+            window.history.pushState({}, '', url);
+            
+            // Scroll suave para o topo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          // Se não estiver na página de produtos, deixar o link funcionar normalmente (navegação)
         });
       });
 

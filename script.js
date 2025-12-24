@@ -66,12 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdown.classList.toggle('active');
       });
       
-      // Close on outside click
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('active');
-        }
-      });
+      // Close on outside click (prevent multiple listeners)
+      if (!dropdown._hasOutsideClickListener) {
+        document.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+          }
+        });
+        dropdown._hasOutsideClickListener = true;
+      }
       
       // Hover for desktop
       if (window.innerWidth > 768) {
@@ -187,10 +190,9 @@ function initBeneficiosCarousel() {
   
   // Verificar se já foi duplicado (evitar duplicação múltipla)
   const cards = carousel.querySelectorAll('.beneficio-card');
-  const originalCount = cards.length;
   
-  // Se já tem mais que o original, não duplicar novamente
-  if (originalCount <= 6 && cards.length <= 6) {
+  // Se já tem mais que 6 cards, significa que já foi duplicado
+  if (cards.length <= 6) {
     // Duplicar cards para loop infinito perfeito
     const cardsArray = Array.from(cards);
     cardsArray.forEach(card => {

@@ -18,3 +18,4 @@ Start-Sleep -Seconds 1
 
 # Iniciar o servidor
 python server.py
+

@@ -27,6 +27,7 @@ html {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100vw;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -53,6 +54,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  max-width: 100vw;
   position: relative;
   min-height: 100vh;
 }
@@ -343,7 +345,8 @@ nav a.active {
   }
   
   nav.active {
-    max-height: 800px;
+    max-height: none;
+    height: auto;
   }
   
   nav ul {
@@ -1080,13 +1083,18 @@ section.bg-azul-escuro .section-title {
   overflow-x: hidden;
   scroll-behavior: smooth;
   padding: 1rem 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .produtos-wrapper.produtos-grid-view {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   overflow: visible;
   gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .produto-item[data-visible="false"] {
@@ -1426,10 +1434,13 @@ section.bg-azul-escuro .section-title {
 
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 @media (max-width: 768px) {
@@ -1437,6 +1448,12 @@ section.bg-azul-escuro .section-title {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 
