@@ -21,29 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const nav = document.querySelector('nav');
   
   if (menuToggle && nav) {
-    menuToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
+    menuToggle.addEventListener('click', function() {
       nav.classList.toggle('active');
-      // Atualizar icone do botão
-      this.textContent = nav.classList.contains('active') ? '✕' : '☰';
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
       if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
         nav.classList.remove('active');
-        menuToggle.textContent = '☰';
       }
-    });
-    
-    // Fechar menu quando clicar em um link (exceto dropdown toggle)
-    nav.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth <= 768) {
-          nav.classList.remove('active');
-          menuToggle.textContent = '☰';
-        }
-      });
     });
   }
   
@@ -80,15 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdown.classList.toggle('active');
       });
       
-      // Close on outside click (prevent multiple listeners)
-      if (!dropdown._hasOutsideClickListener) {
-        document.addEventListener('click', function(e) {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('active');
-          }
-        });
-        dropdown._hasOutsideClickListener = true;
-      }
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('active');
+        }
+      });
       
       // Hover for desktop
       if (window.innerWidth > 768) {
@@ -202,16 +185,11 @@ function initBeneficiosCarousel() {
   const carousel = document.querySelector('.beneficios-carousel');
   if (!carousel) return;
   
-  // Verificar se já foi duplicado (evitar duplicação múltipla)
+  // Duplicar cards para loop infinito
   const cards = carousel.querySelectorAll('.beneficio-card');
-  
-  // Se já tem mais que 6 cards, significa que já foi duplicado
-  if (cards.length <= 6) {
-    // Duplicar cards para loop infinito perfeito
-    const cardsArray = Array.from(cards);
-    cardsArray.forEach(card => {
+  if (cards.length > 0) {
+    cards.forEach(card => {
       const clone = card.cloneNode(true);
-      clone.setAttribute('data-clone', 'true');
       carousel.appendChild(clone);
     });
   }
@@ -464,19 +442,22 @@ document.addEventListener('DOMContentLoaded', function() {
   initContactForm();
   initExibirMais();
   
-  // NÃO substituir produtos - eles já estão hardcoded no HTML
-  // Apenas inicializar animações para os produtos existentes
+  // Carregar produtos na página de produtos (apenas se o grid estiver vazio)
   const produtosGrid = document.querySelector('.produtos-grid');
+  const produtosCarousel = document.querySelectorAll('.produtos-wrapper');
   
-  if (produtosGrid) {
-    // Re-inicializar animações para os elementos existentes
-    setTimeout(() => {
-      initScrollAnimations();
-    }, 100);
+  // Não sobrescrever se já houver produtos no grid (página produtos.html tem produtos estáticos)
+  if (produtosGrid && produtosGrid.children.length === 0) {
+    loadProdutos().then(produtos => {
+      produtosGrid.innerHTML = produtos.map(p => renderProdutoCard(p, false)).join('');
+      // Re-inicializar animações para os novos elementos
+      setTimeout(() => {
+        initScrollAnimations();
+      }, 100);
+    });
   }
   
   // Inicializar carrosséis que já têm conteúdo (Mais Vendidos e Destaques)
-  const produtosCarousel = document.querySelectorAll('.produtos-wrapper');
   if (produtosCarousel.length > 0) {
     produtosCarousel.forEach(wrapper => {
       // Se o wrapper já tem conteúdo (placeholders), apenas inicializar o carrossel

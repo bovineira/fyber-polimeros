@@ -22,6 +22,7 @@
       min-height: calc(100vh - 120px);
       width: 100%;
       box-sizing: border-box;
+      overflow-x: hidden;
     }
 
     .produtos-sidebar {
@@ -75,6 +76,9 @@
 
     .produtos-content {
       min-height: 400px;
+      width: 100%;
+      overflow-x: visible;
+      box-sizing: border-box;
     }
 
     .produtos-header {
@@ -93,23 +97,11 @@
 
     .produtos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       width: 100%;
+      max-width: 100%;
       box-sizing: border-box;
-      padding: 0;
-    }
-    
-    @media (min-width: 769px) and (max-width: 1200px) {
-      .produtos-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .produtos-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     .produto-card {
@@ -182,8 +174,6 @@
     @media (max-width: 968px) {
       .produtos-page-container {
         grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 1.5rem;
       }
 
       .produtos-sidebar {
@@ -191,8 +181,7 @@
       }
 
       .produtos-grid {
-        grid-template-columns: 1fr;
-        padding: 0;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       }
     }
   </style>
@@ -220,16 +209,16 @@
               <span class="chevron">▼</span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="produtos.html?categoria=fibra-de-vidro" data-categoria="fibra-de-vidro">Fibra de Vidro</a></li>
-              <li><a href="produtos.html?categoria=equipamentos-acessorios" data-categoria="equipamentos-acessorios">Equipamentos e Acessórios</a></li>
-              <li><a href="produtos.html?categoria=resinas" data-categoria="resinas">Resinas</a></li>
-              <li><a href="produtos.html?categoria=gel-coats" data-categoria="gel-coats">Gel Coats</a></li>
-              <li><a href="produtos.html?categoria=desmoldantes" data-categoria="desmoldantes">Desmoldantes</a></li>
-              <li><a href="produtos.html?categoria=cargas" data-categoria="cargas">Cargas</a></li>
-              <li><a href="produtos.html?categoria=material-de-nucleo" data-categoria="material-de-nucleo">Material de Núcleo</a></li>
-              <li><a href="produtos.html?categoria=catalisadores-aceleradores" data-categoria="catalisadores-aceleradores">Catalisadores e Aceleradores</a></li>
-              <li><a href="produtos.html?categoria=silicones" data-categoria="silicones">Silicones</a></li>
-              <li><a href="produtos.html?categoria=espumas" data-categoria="espumas">Espumas</a></li>
+              <li><a href="#" data-categoria="fibra-de-vidro">Fibra de Vidro</a></li>
+              <li><a href="#" data-categoria="equipamentos-acessorios">Equipamentos e Acessórios</a></li>
+              <li><a href="#" data-categoria="resinas">Resinas</a></li>
+              <li><a href="#" data-categoria="gel-coats">Gel Coats</a></li>
+              <li><a href="#" data-categoria="desmoldantes">Desmoldantes</a></li>
+              <li><a href="#" data-categoria="cargas">Cargas</a></li>
+              <li><a href="#" data-categoria="material-de-nucleo">Material de Núcleo</a></li>
+              <li><a href="#" data-categoria="catalisadores-aceleradores">Catalisadores e Aceleradores</a></li>
+              <li><a href="#" data-categoria="silicones">Silicones</a></li>
+              <li><a href="#" data-categoria="espumas">Espumas</a></li>
             </ul>
           </li>
           <li><a href="quem-somos.html">Quem Somos</a></li>
@@ -239,7 +228,7 @@
     </div>
   </header>
 
-  <main class="page-main">
+  <main style="margin-top: 120px;">
     <div class="produtos-page-container">
       <!-- Sidebar de Categorias -->
       <aside class="produtos-sidebar">
@@ -295,7 +284,8 @@
             <div class="produto-card-content">
               <h3>Tecido Peel Ply</h3>
               <p>Acabamento superficial perfeito para laminados. Elimina necessidade de lixamento agressivo.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20o%20produto%20Tecido%20Peel%20Ply" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Tecido%20Peel%20Ply" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/tecido-peel-ply.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -305,7 +295,8 @@
             <div class="produto-card-content">
               <h3>Tecido para Pranchas Stand Up</h3>
               <p>Gramatura ideal para SUP. Alta resistência ao impacto e leveza.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Pranchas%20Stand%20Up" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Tecido%20para%20Pranchas%20Stand%20Up" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/tecido-pranchas-stand-up.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -315,7 +306,8 @@
             <div class="produto-card-content">
               <h3>Tecido Multiaxial</h3>
               <p>Múltiplas orientações de fibra para resistência superior. Ideal para alto desempenho.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Tecido%20Multiaxial" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Tecido%20Multiaxial" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/tecido-multiaxial.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -325,7 +317,8 @@
             <div class="produto-card-content">
               <h3>Manta 450</h3>
               <p>Manta 450 g/m² para aplicações estruturais. Excelente impregnação e versatilidade.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Manta%20450" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Manta%20450" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/manta-450.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -335,7 +328,8 @@
             <div class="produto-card-content">
               <h3>Tecido 600g-800g por Metro Quadrado</h3>
               <p>Alta gramatura para máxima resistência estrutural. Ideal para grandes projetos náuticos.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Tecido%20600g-800g" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Tecido%20600g-800g" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/tecido-600g-800g-por-metro-quadrado.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -346,7 +340,8 @@
             <div class="produto-card-content">
               <h3>Resina Epóxi</h3>
               <p>Alta resistência mecânica e química. Sistema bicomponente para alto desempenho.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Resina%20Epóxi" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Resina%20Epóxi" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/resina-epoxi.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -356,7 +351,8 @@
             <div class="produto-card-content">
               <h3>Resina Ortoftálica</h3>
               <p>Versátil e econômica. Ideal para aplicações gerais e laminação.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Resina%20Ortoftálica" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Resina%20Ortoftálica" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/resina-ortoftalica.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -366,7 +362,8 @@
             <div class="produto-card-content">
               <h3>Resina Isoftálica</h3>
               <p>Melhor resistência química e mecânica. Ideal para aplicações náuticas.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Resina%20Isoftálica" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Resina%20Isoftálica" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/resina-isoftalica.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -376,7 +373,8 @@
             <div class="produto-card-content">
               <h3>Resinas Éster Vinílicas</h3>
               <p>Resistência química superior. Ideal para ambientes agressivos.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Resinas%20Éster%20Vinílicas" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Resinas%20Éster%20Vinílicas" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/resinas-ester-vinilicas.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -386,7 +384,8 @@
             <div class="produto-card-content">
               <h3>Resinas Isoftálicas com NPG</h3>
               <p>Tecnologia avançada com resistência superior à hidrólise e osmose.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Resinas%20Isoftálicas%20NPG" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Resinas%20Isoftálicas%20NPG" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/resinas-isoftalicas-npg.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -396,7 +395,8 @@
             <div class="produto-card-content">
               <h3>Resina de Mármores</h3>
               <p>Específica para mármore sintético. Alta viscosidade e excelente polibilidade.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Resina%20de%20Mármores" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Resina%20de%20Mármores" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/resina-de-marmores.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -407,7 +407,8 @@
             <div class="produto-card-content">
               <h3>Gel Coat Isoftálico</h3>
               <p>Acabamento superior com proteção UV e resistência à osmose.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Gel%20Coat%20Isoftálico" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Gel%20Coat%20Isoftálico" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/gel-coat-isoftalico.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -417,7 +418,8 @@
             <div class="produto-card-content">
               <h3>Gel Coat Ortoftálico</h3>
               <p>Econômico para aplicações gerais. Bom acabamento estético.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Gel%20Coat%20Ortoftálico" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Gel%20Coat%20Ortoftálico" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/gel-coat-ortoftalico.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -427,7 +429,8 @@
             <div class="produto-card-content">
               <h3>Gel Éster Vinílico</h3>
               <p>Máxima proteção e durabilidade. Resistência química excepcional.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Gel%20Éster%20Vinílico" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Gel%20Éster%20Vinílico" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/gel-ester-vinilico.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -437,7 +440,8 @@
             <div class="produto-card-content">
               <h3>Gel para Molde</h3>
               <p>Específico para confecção de moldes. Alta dureza e resistência à abrasão.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Molde" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Gel%20para%20Molde" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/gel-para-molde.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -448,7 +452,8 @@
             <div class="produto-card-content">
               <h3>Divinycell</h3>
               <p>Espuma de núcleo PVC de alta densidade. Máxima relação resistência/peso.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Divinycell" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Divinycell" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/divinycell.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -458,7 +463,8 @@
             <div class="produto-card-content">
               <h3>Coremat</h3>
               <p>Material 3D conformável. Ideal para superfícies curvas complexas.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Coremat" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Coremat" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Coremat.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -468,7 +474,8 @@
             <div class="produto-card-content">
               <h3>Espuma de PET</h3>
               <p>100% reciclável. Alta resistência e sustentabilidade.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Espuma%20de%20PET" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Espuma%20de%20PET" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Espuma-de-PET.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -478,7 +485,8 @@
             <div class="produto-card-content">
               <h3>Soric</h3>
               <p>Dupla função: distribuição e núcleo. Acelera processos de infusão.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Soric" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Soric" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Soric.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -489,7 +497,8 @@
             <div class="produto-card-content">
               <h3>Acelerador de Cobalto</h3>
               <p>Essencial para cura de resinas poliéster. Alta pureza e concentração ideal.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Acelerador%20de%20Cobalto" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Acelerador%20de%20Cobalto" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/acelerador-de-cobalto.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -499,7 +508,8 @@
             <div class="produto-card-content">
               <h3>Acelerador Dimetil Anilina</h3>
               <p>Alta pureza para cura em temperatura ambiente. Controle preciso do tempo de gel.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Acelerador%20Dimetil%20Anilina" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Acelerador%20Dimetil%20Anilina" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/acelerador-dimetil-anilina.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -509,7 +519,8 @@
             <div class="produto-card-content">
               <h3>Catalisador MEK</h3>
               <p>Alta estabilidade e pureza. Cura rápida e uniforme.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Catalisador%20MEK" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Catalisador%20MEK" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/catalisador-mek.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -520,7 +531,8 @@
             <div class="produto-card-content">
               <h3>Borracha de Silicone para Molde</h3>
               <p>Alta precisão para confecção de moldes. Reprodução fiel de detalhes.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Borracha%20de%20Silicone" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Borracha%20de%20Silicone" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/borracha-silicone-molde.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -531,7 +543,8 @@
             <div class="produto-card-content">
               <h3>Aplicador de Massa</h3>
               <p>Ferramenta essencial para aplicação uniforme. Diversos tamanhos.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Aplicador%20de%20Massa" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Aplicador%20de%20Massa" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/aplicador-de-massa.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -541,7 +554,8 @@
             <div class="produto-card-content">
               <h3>Fita Crepe</h3>
               <p>Alta qualidade para laminação. Remoção limpa sem resíduos.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Fita%20Crepe" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Fita%20Crepe" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/fita-crepe.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -551,7 +565,8 @@
             <div class="produto-card-content">
               <h3>Estopas</h3>
               <p>Alta absorção. Livre de fiapos e resistente a solventes.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Estopas" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Estopas" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/estopas.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -561,7 +576,8 @@
             <div class="produto-card-content">
               <h3>Máscaras</h3>
               <p>Proteção respiratória profissional. Filtros químicos para vapores orgânicos.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Máscaras" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Máscaras" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/mascaras.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -571,7 +587,8 @@
             <div class="produto-card-content">
               <h3>Rolos de Lã</h3>
               <p>Lã de carneiro natural. Acabamento profissional em gel coats.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Rolos%20de%20Lã" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Rolos%20de%20Lã" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/rolos-de-la.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -581,7 +598,8 @@
             <div class="produto-card-content">
               <h3>Pincéis</h3>
               <p>Cerdas sintéticas resistentes. Linha completa de tamanhos.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Pincéis" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Pincéis" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/pinceis.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -591,7 +609,8 @@
             <div class="produto-card-content">
               <h3>Lixas</h3>
               <p>Diversas granulometrias. De desbaste grosseiro a polimento fino.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Lixas" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Lixas" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/lixas.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -601,7 +620,8 @@
             <div class="produto-card-content">
               <h3>Bucha Celeron</h3>
               <p>Tecido fenólico de alta resistência. Isolamento elétrico excelente.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Bucha%20Celeron" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Bucha%20Celeron" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/bucha-celeron.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -611,7 +631,8 @@
             <div class="produto-card-content">
               <h3>Roletes Fura Bolha</h3>
               <p>Eliminação eficiente de bolhas. Diversos tamanhos disponíveis.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Roletes%20Fura%20Bolha" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Roletes%20Fura%20Bolha" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/roletes-fura-bolha.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -621,7 +642,8 @@
             <div class="produto-card-content">
               <h3>Picador Roving</h3>
               <p>Cortes rápidos e precisos. Aumenta produtividade em laminação.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Picador%20Roving" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Picador%20Roving" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/picador-roving.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -631,7 +653,8 @@
             <div class="produto-card-content">
               <h3>Pistola Modelo 12</h3>
               <p>Aplicação profissional por spray. Atomização de alta qualidade.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Pistola%20Modelo%2012" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Pistola%20Modelo%2012" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/pistola-modelo-12.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -642,7 +665,8 @@
             <div class="produto-card-content">
               <h3>Aerosil-Carbosil</h3>
               <p>Agentes tixotrópicos de alta qualidade. Controle de viscosidade eficiente.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Aerosil-Carbosil" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Aerosil-Carbosil" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Aerosil-Carbosil.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -652,7 +676,8 @@
             <div class="produto-card-content">
               <h3>Alumina Hidratada</h3>
               <p>Retardante de chamas natural. Baixa densidade e alta performance.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Alumina%20Hidratada" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Alumina%20Hidratada" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Alumina Hidratada.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -662,7 +687,8 @@
             <div class="produto-card-content">
               <h3>Calcita</h3>
               <p>Carga mineral versátil e econômica. Excelente custo-benefício.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Calcita" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Calcita" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Calcita.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -672,7 +698,8 @@
             <div class="produto-card-content">
               <h3>Fibra Moída</h3>
               <p>Reforço tridimensional efetivo. Alta resistência mecânica.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Fibra%20Moída" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Fibra%20Moída" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Fibra Moida.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -682,7 +709,8 @@
             <div class="produto-card-content">
               <h3>Micro Esfera Oca</h3>
               <p>Baixíssima densidade. Redução drástica de peso sem perder resistência.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Micro%20Esfera%20Oca" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Micro%20Esfera%20Oca" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Micro Esfera Oca.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -692,7 +720,8 @@
             <div class="produto-card-content">
               <h3>Talco</h3>
               <p>Excelente lixabilidade. Melhora acabamento superficial e reduz pegajosidade.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Talco" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Talco" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Talco.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -703,7 +732,8 @@
             <div class="produto-card-content">
               <h3>Álcool Desmoldante PVA</h3>
               <p>Sistema mais utilizado mundialmente. Desmoldagem perfeita garantida.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Álcool%20Desmoldante%20PVA" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Álcool%20Desmoldante%20PVA" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/alcool Desmoldante PVA.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -713,7 +743,8 @@
             <div class="produto-card-content">
               <h3>Catalisador BPO</h3>
               <p>Peróxido de Benzoíla em pasta. Para cura térmica e tempo prolongado.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Catalisador%20BPO" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Catalisador%20BPO" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Catalizador BPO.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -723,7 +754,8 @@
             <div class="produto-card-content">
               <h3>Cera Desmoldante</h3>
               <p>Alta performance. Múltiplas desmoldagens consecutivas garantidas.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Cera%20Desmoldante" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Cera%20Desmoldante" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Cera Desmoldante.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -733,7 +765,8 @@
             <div class="produto-card-content">
               <h3>Chemlease 15 Sealer</h3>
               <p>Tecnologia de ponta. Padrão industrial internacional Chemlease.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Chemlease%2015%20Sealer" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Chemlease%2015%20Sealer" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Chemlease 15 Sealer.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -743,7 +776,8 @@
             <div class="produto-card-content">
               <h3>Chemlease MOLD CLEANER</h3>
               <p>Limpador profissional Chemlease. Não danifica gel coat de moldes.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Chemlease%20MOLD%20CLEANER" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Chemlease%20MOLD%20CLEANER" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Chemlease MOLD CLEANER Limpador de Moldes.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -754,7 +788,8 @@
             <div class="produto-card-content">
               <h3>Espuma de Poliuretano</h3>
               <p>Célula fechada de alta densidade. Excelente para núcleos estruturais.</p>
-              <a href="https://wa.me/557191049971?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20sobre%20o%20produto%20Espuma%20de%20Poliuretano" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Solicitar Orçamento</a>
+              <a href="https://wa.me/557191049971?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20Espuma%20de%20Poliuretano" 
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background-color: #2563eb;">Fazer orçamento</a>
               <a href="produtos/Espuma-de-Poliuretano.html" class="btn btn-secondary" style="margin-top: 0.5rem;">Ver detalhes</a>
             </div>
           </div>
@@ -849,25 +884,12 @@
       const dropdownLinks = document.querySelectorAll('.dropdown-menu a[data-categoria]');
       dropdownLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-          // Se estiver na página de produtos, usar filtro local
-          if (window.location.pathname.includes('produtos.html')) {
-            e.preventDefault();
-            const categoria = this.dataset.categoria;
-            filtrarProdutos(categoria);
-            
-            // Atualizar URL
-            const url = new URL(window.location);
-            if (categoria === 'todas') {
-              url.searchParams.delete('categoria');
-            } else {
-              url.searchParams.set('categoria', categoria);
-            }
-            window.history.pushState({}, '', url);
-            
-            // Scroll suave para o topo
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-          // Se não estiver na página de produtos, deixar o link funcionar normalmente (navegação)
+          e.preventDefault();
+          const categoria = this.dataset.categoria;
+          filtrarProdutos(categoria);
+          
+          // Scroll suave para o topo
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
 
@@ -893,7 +915,8 @@
         const pasta = imagemDiv.getAttribute('data-pasta');
         if (!pasta) return;
         
-        const caminhoBase = `assets/img/produtos/${pasta}/`;
+        // Codificar caminho para URLs com espaços e caracteres especiais
+        const caminhoBase = `assets/img/produtos/${encodeURI(pasta)}/`;
         const extensoes = ['webp', 'jpg', 'jpeg', 'png'];
         
         // Criar elemento img
