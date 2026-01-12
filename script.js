@@ -333,7 +333,7 @@ function initContactForm() {
         `Gostaria de receber mais informações.`
       );
       
-      const mailtoLink = `mailto:contato@fyberpolimeros.com.br?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:fyberpol@gmail.com?subject=${subject}&body=${body}`;
       
       // Abrir cliente de e-mail
       window.location.href = mailtoLink;

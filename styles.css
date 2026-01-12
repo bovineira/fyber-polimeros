@@ -143,12 +143,12 @@ header {
   width: 100%;
   max-width: 100%;
   background-color: var(--branco);
-  z-index: 10000;
+  z-index: 100000;
   padding: 0;
   box-shadow: 0 2px 8px var(--sombra);
   transition: box-shadow 0.3s ease;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: visible;
   margin: 0;
 }
 
@@ -163,6 +163,8 @@ header.scrolled {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: relative;
+  overflow: visible;
 }
 
 .logo {
@@ -183,7 +185,7 @@ header.scrolled {
 
 nav {
   position: relative;
-  z-index: 10001;
+  z-index: 100001;
 }
 
 nav ul {
@@ -255,7 +257,7 @@ nav a.active {
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s ease;
-  z-index: 99999;
+  z-index: 1000001;
   list-style: none;
   padding: 0.5rem 0;
   display: flex;
@@ -497,6 +499,11 @@ section.bg-azul-escuro .section-title {
   right: 0;
   box-sizing: border-box;
   z-index: 1;
+  pointer-events: none;
+}
+
+.hero-slideshow > * {
+  pointer-events: auto;
 }
 
 .slide {
@@ -1158,11 +1165,11 @@ section.bg-azul-escuro .section-title {
 }
 
 .bg-azul-escuro .telefone-numero {
-  color: var(--branco);
+  color: var(--azul-escuro);
 }
 
 .bg-azul-escuro .contato-card p[style*="color: #6B7280"] {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: #6B7280 !important;
 }
 
 /* ============================================
