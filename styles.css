@@ -436,7 +436,16 @@ section {
 
 section.hero-slideshow {
   padding: 0;
-  margin: 0;
+  margin-top: 128px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  section.hero-slideshow {
+    margin-top: 110px;
+  }
 }
 
 section > *:not(.hero-slideshow):not(.beneficios-container) {
@@ -725,27 +734,43 @@ section.bg-azul-escuro .section-title {
 @media (max-width: 768px) {
   .hero-slideshow {
     height: 70vh;
-    min-height: 500px;
-    margin-top: 140px;
+    min-height: 450px;
+  }
+  
+  .slide-overlay {
+    padding-top: 2rem;
   }
   
   .slide-content {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .slide-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
   }
   
   .slide-arrow.prev {
-    left: 1rem;
+    left: 0.5rem;
   }
   
   .slide-arrow.next {
-    right: 1rem;
+    right: 0.5rem;
+  }
+  
+  .slideshow-controls {
+    bottom: 1rem;
   }
 }
 
