@@ -438,7 +438,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       'Tecido Multiaxial': 'fibra-de-vidro/tecido-multiaxial',
       'Manta 450': 'fibra-de-vidro/manta-450',
       'Resina Ortoftálica': 'resinas/resina-ortoftalica',
-      'Resina Isoftálica': 'resinas/resina-isoftalica'
+      'Resina Isoftálica': 'resinas/resina-isoftalica',
+      'Aplicador de Massa': 'equipamentos-acessorios/aplicador-de-massa'
     };
 
     // Função para carregar imagem de produto
@@ -451,7 +452,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       if (!imagemDiv || !produtosImagens[nomeProduto]) return;
       
-      const caminhoBase = `assets/img/produtos/${encodeURI(produtosImagens[nomeProduto])}/`;
+      const pasta = produtosImagens[nomeProduto];
+      const caminhoBase = `assets/img/produtos/${pasta.split('/').map(encodeURIComponent).join('/')}/`;
       const extensoes = ['webp', 'jpg', 'jpeg', 'png'];
       
       // Criar elemento img

@@ -726,6 +726,12 @@ section.bg-azul-escuro .section-title {
   .hero-slideshow {
     height: 70vh;
     min-height: 500px;
+    margin-top: 140px;
+  }
+  
+  .slide-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   
   .slide-arrow {
@@ -845,6 +851,19 @@ section.bg-azul-escuro .section-title {
 .beneficios-container::after {
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 20%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 768px) {
+  .beneficios-container::before,
+  .beneficios-container::after {
+    width: 0;
+    display: none;
+  }
+  
+  .beneficio-card {
+    backdrop-filter: none;
+    background: var(--branco);
+  }
 }
 
 /* Duplicar cards para loop infinito */

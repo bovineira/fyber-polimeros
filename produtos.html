@@ -935,7 +935,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (!pasta) return;
         
         // Codificar caminho para URLs com espaços e caracteres especiais
-        const caminhoBase = `assets/img/produtos/${encodeURI(pasta)}/`;
+        const caminhoBase = `assets/img/produtos/${pasta.split('/').map(encodeURIComponent).join('/')}/`;
         const extensoes = ['webp', 'jpg', 'jpeg', 'png'];
         
         // Criar elemento img
